@@ -1,12 +1,15 @@
 # The Elgato-MQTT connector.
 Control your Elgato Key Light using MQTT
 
-Arguments: `<light ip:port>` `<mqtt ip:port>` `<topic-prefix>`
-For example: `192.168.1.100:9123` `192.168.1.200:1883` `office/light`
+[![Java CI with Gradle](https://github.com/shaeberling/elgato-mqtt/actions/workflows/gradle.yml/badge.svg)](https://github.com/shaeberling/elgato-mqtt/actions/workflows/gradle.yml)
 
-- The first parameter is for the Elgato light. Port should always be 9123.
-- The second parameter is for your MQTT broker. Port 1883 is usually the default.
-- The third parameter is the topic prefix, to which actions will be appended.
+- Arguments: `<light ip:port>` `<mqtt ip:port>` `<topic-prefix>`
+- For example: `192.168.1.100:9123` `192.168.1.200:1883` `office/light`
+
+
+1. Parameter is for the Elgato light. Port should always be 9123.
+2. Parameter is for your MQTT broker. Port 1883 is usually the default.
+3. Parameter is the topic prefix, to which actions will be appended.
 
 The following topics will be subscribed to:
 - `<prefix>/brightness`  (Value 0.0 - 1.0)
