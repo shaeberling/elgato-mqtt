@@ -17,7 +17,6 @@ dependencies {
     implementation("com.github.kittinunf.fuel:fuel-gson:2.3.1")
     implementation("com.google.code.gson:gson:2.8.8")
     implementation("org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5")
-//    implementation("org.eclipse.paho:org.eclipse.paho.mqttv5.client:1.2.5")
     testImplementation(kotlin("test"))
 }
 
