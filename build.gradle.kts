@@ -1,12 +1,14 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 
 plugins {
     kotlin("jvm") version "1.5.31"
+    id("com.github.johnrengelman.shadow") version "7.1.0"
     application
 }
 
-group = "me.micro"
-version = "1.0-SNAPSHOT"
+group = "com.s13g.winston"
+version = "0.1"
 
 repositories {
     mavenCentral()
@@ -26,6 +28,12 @@ tasks.test {
 
 tasks.withType<KotlinCompile>() {
     kotlinOptions.jvmTarget = "11"
+}
+
+tasks.withType<ShadowJar> {
+    archiveBaseName.set("elgato-mqtt")
+    manifest.attributes["Main-Class"] = "com.s13g.sauron.SauronMainKt"
+    manifest.attributes["Implementation-Title"] = "Winston Sauron Daemon"
 }
 
 application {
